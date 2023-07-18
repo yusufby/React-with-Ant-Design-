@@ -1,27 +1,40 @@
 
 import './App.css';
-import { Input, Select } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { Form, Input, Button } from 'antd';
 
 
 
 function App() {
-  const fruits = ['Banana', 'Mango', 'Orange', 'Cherry'];
+
+  const onFinish = (e) => {
+    console.log(e);
+  }
+
 
   return (
     <div className="App">
       <header>
-        <p>What is your favourite fruit?</p>
-        <Select 
-        mode='multiple' 
-        allowClear
-        maxTagCount={2}
-        placeholder='Select fruit' 
-        style={{width:"50%"}}>
-          {fruits.map((fruit, index) => {
-            return <Select.Option key={index} value={fruit}></Select.Option>
-          })}
-        </Select>
+        <Form onFinish={onFinish}>
+          <Form.Item label='user name' name="username" required>
+            <Input placeholder='user name'>
+            </Input>
+          </Form.Item>
+
+          <Form.Item label='email' name="email" required>
+            <Input placeholder='email'>
+            </Input>
+          </Form.Item>
+
+          <Form.Item label='password' name="password" a>
+            <Input placeholder='password' type='password' >
+            </Input>
+          </Form.Item>
+          <Form.Item>
+            <Button type='primary' htmlType='submit' block>Log In</Button>
+          </Form.Item>
+        </Form>
+
+
       </header>
     </div>
   );

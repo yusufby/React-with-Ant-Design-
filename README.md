@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+Ant Design of React
+Following the Ant Design specification, we developed a React UI library antd that contains a set of high quality components and demos for building rich, interactive user interfaces.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ + 
+✨ Features
+🌈 Enterprise-class UI designed for web applications.
+📦 A set of high-quality React components out of the box.
+🛡 Written in TypeScript with predictable static types.
+⚙️ Whole package of design resources and development tools.
+🌍 Internationalization support for dozens of languages.
+🎨 Powerful theme customization in every detail.
+Environment Support
+Modern browsers
+Server-side Rendering
+Electron
+Edge
+Edge	Firefox
+Firefox	Chrome
+Chrome	Safari
+Safari	Opera
+Opera	Electron
+Electron
+Edge	last 2 versions	last 2 versions	last 2 versions	last 2 versions	last 2 versions
+Polyfills are needed for IE browsers. We recommend @babel/preset-env for it. You can set targets config if you are using umi.
 
-## Available Scripts
+Dropped support of IE8 after antd@2.0. Dropped support of React 15 and IE9/10 after antd@4.0. Dropped support of IE after antd@5.0.
 
-In the project directory, you can run:
+Version
+Stable: npm package
+You can subscribe to this feed for new version notifications: https://github.com/ant-design/ant-design/releases.atom
 
-### `npm start`
+Installation
+Using npm or yarn or pnpm
+We recommend using npm or yarn or pnpm to install, it not only makes development easier, but also allow you to take advantage of the rich ecosystem of Javascript packages and tooling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm
+yarn
+pnpm
+$ npm install antd --save
+If you are in a bad network environment, you can try other registries and tools like cnpm.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Import in Browser
+Add script and link tags in your browser and use the global variable antd.
 
-### `npm test`
+We provide antd.js and antd.min.js reset.css under dist folder in antd's npm package. You can also download these files directly from CDNJS,  or unpkg.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We strongly discourage loading the entire files this will add bloat to your application and make it more difficult to receive bugfixes and updates. Antd is intended to be used in conjunction with a build tool, such as webpack, which will make it easy to import only the parts of antd that you are using.
 
-### `npm run build`
+Note: You should import react、react-dom、dayjs before using antd.js.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Usage
+import React from 'react';
+import { DatePicker } from 'antd';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const App = () => {
+  return <DatePicker />;
+};
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default App;
+Use modularized antd
+antd supports ES modules tree shaking by default.
