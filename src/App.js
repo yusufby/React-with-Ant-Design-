@@ -1,43 +1,38 @@
 
+import { useState } from 'react';
 import './App.css';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, message,Alert } from 'antd';
 
 
 
 function App() {
+  const [showAlert, setShowAlert]=useState(false);
 
-  const onFinish = (e) => {
-    console.log(e);
+  const onFinish = () => {
+    
+    setTimeout(()=>{
+      setShowAlert(true);
+    },2000);
   }
-
-
   return (
-    <div className="App">
-      <header>
+    <div className='App'>
+      <header className='App-header'>
+      {showAlert && <Alert type='error' description='There was an error' closable />}
         <Form onFinish={onFinish}>
-          <Form.Item label='user name' name="username" required>
-            <Input placeholder='user name'>
-            </Input>
+          <Form.Item label="User name" name="username">
+            <Input placeholder='username' required></Input>
           </Form.Item>
-
-          <Form.Item label='email' name="email" required>
-            <Input placeholder='email'>
-            </Input>
-          </Form.Item>
-
-          <Form.Item label='password' name="password" a>
-            <Input placeholder='password' type='password' >
-            </Input>
+          <Form.Item label="Password" name="password">
+            <Input.Password placeholder='password' type='password' required></Input.Password>
           </Form.Item>
           <Form.Item>
-            <Button type='primary' htmlType='submit' block>Log In</Button>
+            <Button block type='primary' htmlType='submit'>Submit </Button>
           </Form.Item>
         </Form>
 
-
       </header>
-    </div>
-  );
-}
 
+    </div>
+  )
+}
 export default App;

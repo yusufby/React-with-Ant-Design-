@@ -1,6 +1,13 @@
 .App {
   text-align: center;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+Form.Item Button{
+  flex-basis: 50px;
 }
 
 
