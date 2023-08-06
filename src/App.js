@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import './App.css';
-import { Form, Input, Button, message,Alert } from 'antd';
+import { Button, Collapse, Typography} from 'antd';
 
 
 
@@ -16,22 +16,35 @@ function App() {
   }
   return (
     <div className='App'>
-      <header className='App-header'>
-      {showAlert && <Alert type='error' description='There was an error' closable />}
-        <Form onFinish={onFinish}>
-          <Form.Item label="User name" name="username">
-            <Input placeholder='username' required></Input>
-          </Form.Item>
-          <Form.Item label="Password" name="password">
-            <Input.Password placeholder='password' type='password' required></Input.Password>
-          </Form.Item>
-          <Form.Item>
-            <Button block type='primary' htmlType='submit'>Submit </Button>
-          </Form.Item>
-        </Form>
+    <Collapse 
+    accordion={false}
+     expandIconPosition='right' 
+     defaultActiveKey={["1","2"]} 
+     bordered={false}
+     ghost={true}
+     >
+        <Collapse.Panel extra={<Button>Download</Button>} key={"1"} header="this is first one">
+            <Typography.Text>
+              This is the first content
+            </Typography.Text>
+        </Collapse.Panel>
+        <Collapse.Panel key={"2"} header="this is second one">
+            <Typography.Text>
+              This is the second content
+            </Typography.Text>
+        </Collapse.Panel>
+        <Collapse.Panel  collapsible="disabled" key={"3"} header="this is third one">
+            <Typography.Text>
+              This is the third content
+            </Typography.Text>
+        </Collapse.Panel>
+        <Collapse.Panel key={"4"} header="this is fourth one">
+            <Typography.Text>
+              This is the fourth content
+            </Typography.Text>
+        </Collapse.Panel>
 
-      </header>
-
+    </Collapse>
     </div>
   )
 }
